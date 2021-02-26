@@ -7,6 +7,13 @@
 (function($) {
   "use strict";
 
+  // Prevent cut and copy
+  $(document).ready(function() {
+    $('body').bind('cut copy', function(e) {
+        e.preventDefault();
+      });
+  });
+  
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $('#main-nav').outerHeight() - 1;
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
@@ -42,6 +49,29 @@
     }
   });
 
+  // Navigation active state on scroll
+  var nav_sections = $('section');
+  var main_nav = $('.nav-menu, .mobile-nav');
+
+  $(window).on('scroll', function() {
+    var cur_pos = $(this).scrollTop() + 200;
+
+    nav_sections.each(function() {
+      var top = $(this).offset().top,
+        bottom = top + $(this).outerHeight();
+
+      if (cur_pos >= top && cur_pos <= bottom) {
+        if (cur_pos <= bottom) {
+          main_nav.find('li').removeClass('active');
+        }
+        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+      }
+      if (cur_pos < 300) {
+        $(".nav-menu ul:first li:first").addClass('active');
+      }
+    });
+  });
+
   // ========================================================================= //
   //  //NAVBAR SHOW - HIDE
   // ========================================================================= //
@@ -65,60 +95,9 @@
     $('.nav-menu').slideToggle();
   });
 
-  // ========================================================================= //
-  //  Owl Carousel Services
-  // ========================================================================= //
-
-  $('.services-carousel').owlCarousel({
-    autoplay: true,
-    loop: true,
-    margin: 20,
-    dots: true,
-    nav: false,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 4
-      }
-    }
-  });
-
-  // ========================================================================= //
-  //  Porfolio isotope and filter
-  // ========================================================================= //
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
-  });
-
   // Initiate venobox (lightbox feature used in portofilo)
   $(document).ready(function() {
     $('.venobox').venobox();
-  });
-
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
   });
 
 })(jQuery);
