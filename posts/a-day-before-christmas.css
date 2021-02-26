@@ -242,6 +242,8 @@ nav ul li a {
 
 .disclaimer {
   font-family: 'Arimo', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
   color: #8b949e;
 }
 
