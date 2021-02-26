@@ -1,10 +1,3 @@
-/**
-* Template Name: Folio - v3.0.0
-* Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -521,6 +514,9 @@ nav ul li a {
     padding: 0 12%;
     margin-bottom: 40px;
   }
+  #posts a:hover {
+    transition: 0s;
+  }
   .post-preview > a > .post-title {
     font-size: 28px;
   }
@@ -588,6 +584,9 @@ nav ul li a {
     padding: 0 10%;
     margin-top: -60px;
     margin-bottom: 40px;
+  }
+  #posts a:hover {
+    transition: 0s;
   }
   .post-preview > a > .post-title {
     font-size: 26px;
@@ -658,6 +657,9 @@ nav ul li a {
   #posts {
     padding: 0 5%;
   }
+  #posts a:hover {
+    transition: 0s;
+  }
   /* Footer */
   #footer .socials-media ul li {
     float: none;
@@ -712,6 +714,9 @@ nav ul li a {
     max-width: 100%;
     margin-bottom: 0;
   }
+  #posts a:hover {
+    transition: 0s;
+  }
   /* Footer */
   #footer .socials-media ul li {
     float: none;
@@ -765,6 +770,9 @@ nav ul li a {
   #about .about-descr .separator {
     max-width: 100%;
     margin-bottom: 0;
+  }
+  #posts a:hover {
+    transition: 0s;
   }
   /* Footer */
   #footer .socials-media ul li {
