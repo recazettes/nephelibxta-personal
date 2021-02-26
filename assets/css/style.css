@@ -393,6 +393,9 @@ nav ul li a {
   color: #bda88c;
   transition: 0.3s ease-in-out 0s;
 }
+#posts a:active {
+  color: #bda88c;
+}
 
 .post-preview > a > .post-title {
   font-size: 34px;
