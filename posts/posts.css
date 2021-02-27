@@ -494,6 +494,9 @@ body {
       float: none;
       display: inline-block;
     }
+    #footer p {
+      font-size: 10px;
+    }
   }
   
   /** Width between 600px to 0
